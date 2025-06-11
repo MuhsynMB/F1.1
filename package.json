@@ -1,0 +1,32 @@
+{
+  "name": "soko-chain",
+  "version": "1.0.0",
+  "description": "Decentralized e-commerce platform for clothing",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy": "npx hardhat run scripts/deploy.ts --network localhost",
+    "node": "npx hardhat node",
+    "frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run node\" \"npm run frontend\"",
+    "setup": "npm install && cd frontend && npm install"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "ecommerce",
+    "solidity",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.24.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
