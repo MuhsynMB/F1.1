@@ -1,10 +1,17 @@
-# Soko Chain - Decentralized Multi-Vendor Clothing Marketplace
+# 🛍️ Soko Chain - Decentralized Multi-Vendor Clothing Marketplace
 
-A full-stack decentralized e-commerce platform built on Ethereum, focused exclusively on clothing sales. This multi-vendor marketplace allows anyone to register as a vendor, list products, and earn from sales, while customers can purchase from multiple vendors using cryptocurrency (Ether).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
+[![Hardhat](https://img.shields.io/badge/Hardhat-2.0+-blue.svg)](https://hardhat.org/)
+[![React](https://img.shields.io/badge/React-19+-blue.svg)](https://reactjs.org/)
+
+A decentralized e-commerce platform built on Ethereum blockchain, specifically designed for clothing sales. Features multi-vendor architecture, cryptocurrency payments, and IPFS integration for decentralized storage.
+
+![Soko Chain Banner](https://via.placeholder.com/800x200/4F46E5/FFFFFF?text=Soko+Chain+Marketplace)
 
 ## 🌟 Features
 
-### Blockchain & Smart Contract
+### 🔗 Blockchain & Smart Contract
 - **Ethereum Smart Contracts** developed with Solidity
 - **Local Development** using Hardhat blockchain
 - **Multi-Vendor Architecture** - anyone can register as a vendor and list products
@@ -12,113 +19,72 @@ A full-stack decentralized e-commerce platform built on Ethereum, focused exclus
 - **Vendor Earnings Management** - vendors can withdraw their earnings
 - **On-chain Product Storage** with IPFS image integration
 - **Secure Transactions** with built-in validation and error handling
-- **Purchase History Tracking** stored on blockchain
 
-### Frontend
+### 🎨 Frontend
 - **React.js** with TypeScript for type safety
 - **Ethers.js** integration for blockchain interaction
 - **MetaMask Wallet** connection and management
 - **Responsive Design** optimized for clothing presentation
 - **Real-time Product Filtering** by category, vendor, and price
 - **Toast Notifications** for transaction feedback
-- **Vendor Registration Interface** for new vendors
 - **Vendor Dashboard** with stats and product management
 
-### Key Functionality
-- 🏪 **Vendor Registration**: Anyone can register as a vendor with store name and description
-- 🛍️ **Product Management**: Vendors can list products with images, pricing, and inventory
-- 💳 **Cryptocurrency Payments**: Users pay with Ether, fees automatically distributed
-- 📱 **Responsive UI**: Works seamlessly on desktop and mobile
-- 🔍 **Advanced Search**: Filter by category, vendor, price range, and text search
-- 📦 **Order Tracking**: View purchase history and delivery estimates
-- 🖼️ **IPFS Integration**: Decentralized image storage
-- 💰 **Earnings Dashboard**: Vendors can track sales and withdraw earnings
-- 🛡️ **Platform Administration**: Platform owner can manage vendors and fees
+### 🏪 Key Functionality
+- **Vendor Registration** - become a seller on the platform
+- **Product Management** - list, update, and manage inventory
+- **Cryptocurrency Payments** - secure ETH transactions
+- **Purchase History** - track all transactions on-chain
+- **Multi-Category Support** - T-Shirts, Jeans, Dresses, Jackets, Shoes, Accessories
+- **Rating System** - 5-star product ratings
+- **Stock Management** - real-time inventory tracking
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- MetaMask browser extension
-- Git
+- **Node.js** (v18 or higher)
+- **npm** or **yarn**
+- **MetaMask** browser extension
+- **Git**
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
+1. **Clone the repository:**   ```bash
+   git clone https://github.com/MuhsynMB/soko-chain.git
    cd soko-chain
    ```
 
-2. **Install dependencies**
+2. **Install dependencies:**
    ```bash
    npm run setup
    ```
 
-3. **Compile smart contracts**
-   ```bash
-   npm run compile
-   ```
-
-4. **Run tests**
-   ```bash
-   npm test
-   ```
-
-5. **Start local blockchain and frontend**
+3. **Start development environment:**
    ```bash
    npm run dev
    ```
 
-   This command will:
-   - Start a local Hardhat blockchain node
-   - Start the React development server
-   - Both will run concurrently
-
-6. **Deploy the contract** (in a new terminal)
+4. **Configure MetaMask:**
    ```bash
-   npm run deploy
+   # Run the MetaMask setup helper
+   .\setup-metamask.ps1
    ```
 
-7. **Configure MetaMask**
-   - Add localhost network (RPC: http://127.0.0.1:8545, Chain ID: 1337)
-   - Import one of the test accounts from Hardhat console
-
-## 🛠️ Project Structure
-
-```
-soko-chain/
-├── contracts/              # Solidity smart contracts
-│   └── SokoChain.sol       # Main e-commerce contract
-├── scripts/                # Deployment scripts
-│   └── deploy.ts           # Contract deployment script
-├── test/                   # Smart contract tests
-│   └── SokoChain.test.ts   # Comprehensive test suite
-├── frontend/               # React frontend application
-│   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── contracts/      # Contract ABI and addresses
-│   │   └── types/          # TypeScript declarations
-│   └── public/             # Static assets
-├── hardhat.config.ts       # Hardhat configuration
-└── package.json            # Project dependencies and scripts
-```
+5. **Open the application:**
+   - Navigate to `http://localhost:3000`
+   - Connect your MetaMask wallet
+   - Start exploring the marketplace!
 
 ## 📋 Available Scripts
 
-### Root Directory
-- `npm run setup` - Install all dependencies
-- `npm run compile` - Compile smart contracts
-- `npm run test` - Run smart contract tests
-- `npm run node` - Start local Hardhat blockchain
-- `npm run deploy` - Deploy contracts to local network
-- `npm run frontend` - Start React development server
-- `npm run dev` - Start both blockchain and frontend
-
-### Frontend Directory
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
+| Command | Description |
+|---------|-------------|
+| `npm run setup` | Install all dependencies |
+| `npm run dev` | Start Hardhat node + frontend |
+| `npm run node` | Start Hardhat blockchain node |
+| `npm run compile` | Compile smart contracts |
+| `npm run deploy` | Deploy contracts to local network |
+| `npm run test` | Run smart contract tests |
+| `npm run frontend` | Start frontend development server |
 
 ## 🔧 Smart Contract Details
 
@@ -178,16 +144,28 @@ struct Product {
 }
 ```
 
-#### Order Structure
-```solidity
-struct Order {
-    uint256 timestamp;
-    Product product;
-    address vendor;
-    uint256 platformFee;
-    uint256 vendorPayment;
-}
+## 🦊 MetaMask Configuration
+
+### Network Settings
 ```
+Network Name: Soko Chain Local
+RPC URL: http://127.0.0.1:8545
+Chain ID: 1337
+Currency Symbol: ETH
+```
+
+### Test Accounts
+The development environment provides test accounts with 10,000 ETH each:
+
+| Role | Address | Purpose |
+|------|---------|---------|
+| Platform Owner | `0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266` | Deploy contracts, manage platform |
+| Vendor 1 | `0x70997970C51812dc3A010C7d01b50e0d17dc79C8` | Register as vendor, list products |
+| Vendor 2 | `0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC` | Second vendor account |
+| Buyer 1 | `0x90F79bf6EB2c4f870365E785982E1f101E93b906` | Purchase products |
+| Buyer 2 | `0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65` | Second buyer account |
+
+📖 **Detailed MetaMask setup instructions**: [METAMASK_SETUP.md](./METAMASK_SETUP.md)
 
 ## 🎨 Frontend Components
 
@@ -196,95 +174,94 @@ struct Order {
 - **ProductGrid.tsx** - Display products in responsive grid
 - **ProductModal.tsx** - Product details and purchase interface
 - **VendorSection.tsx** - Multi-vendor registration and product listing interface
+- **VendorPage.tsx** - Dedicated vendor dashboard and management
+- **Footer.tsx** - Professional footer with marketplace information
 
 ## 🔐 Security Features
 
-- **Owner-only Access Control** for listing products
-- **Input Validation** on all smart contract functions
-- **Reentrancy Protection** on financial transactions
-- **Stock Validation** prevents overselling
-- **Payment Verification** ensures sufficient funds
+- **Access Control** - Role-based permissions for vendors and platform owner
+- **Input Validation** - Comprehensive validation on all smart contract functions
+- **Reentrancy Protection** - Secure financial transactions
+- **Stock Validation** - Prevents overselling
+- **Payment Verification** - Ensures sufficient funds before transactions
 
 ## 🧪 Testing
 
 The project includes comprehensive unit tests covering:
 - Contract deployment and initialization
-- Product listing functionality
-- Purchase transactions
+- Vendor registration and management
+- Product listing and purchasing
 - Access control mechanisms
 - Error handling and edge cases
-- Owner withdrawal functionality
+- Financial transactions and withdrawals
 
 Run tests with:
 ```bash
 npm test
 ```
 
-## 🔧 MetaMask Troubleshooting
-
-### Quick Setup Check
-Before using the application, verify your MetaMask setup:
-
-```powershell
-# Run the MetaMask setup helper
-.\setup-metamask.ps1
-```
-
-### Common MetaMask Issues:
-
-#### 1. "Wrong Network" Error
-- **Problem**: Chain ID mismatch
-- **Solution**: Ensure Chain ID is exactly `1337` (not 31337)
-- **Verify**: Check Hardhat config shows `chainId: 1337`
-
-#### 2. "Nonce Too High" Error  
-- **Problem**: Transaction history mismatch after blockchain restart
-- **Solution**: Reset account in MetaMask (Settings → Advanced → Reset Account)
-
-#### 3. "Contract Not Available" Error
-- **Problem**: Contract not deployed or wrong address
-- **Solution**: 
-  ```powershell
-  npm run deploy
-  ```
-- **Verify**: Check `frontend/src/contracts/contract-address.json`
-
-#### 4. Connection Refused
-- **Problem**: Hardhat node not running
-- **Solution**: Start the development environment
-  ```powershell
-  npm run dev
-  ```
-
-### Test Account Setup
-The platform uses role-based accounts for testing:
-- **Platform Owner** (Account #0): `0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266`
-- **Vendor Accounts** (Account #1-2): For vendor registration and product listing
-- **Buyer Accounts** (Account #3-4): For purchasing products
-
 ## 🌐 IPFS Integration
 
-The application includes placeholder IPFS integration for image storage. In production, you would integrate with:
+The application includes placeholder IPFS integration for image storage. In production, integrate with:
 - **Pinata** - Pinata IPFS service
 - **Web3.Storage** - Web3 native storage
 - **Infura IPFS** - IPFS API service
 
-## 📱 MetaMask Setup
+## 📁 Project Structure
 
-1. Install MetaMask browser extension
-2. Add local network:
-   - Network Name: Hardhat Local
-   - RPC URL: http://127.0.0.1:8545
-   - Chain ID: 1337
-   - Currency Symbol: ETH
-3. Import test account from Hardhat console output
+```
+soko-chain/
+├── contracts/                 # Smart contracts
+│   └── SokoChain.sol         # Main marketplace contract
+├── frontend/                  # React frontend
+│   ├── src/
+│   │   ├── components/       # React components
+│   │   ├── pages/           # Application pages
+│   │   ├── contracts/       # Contract ABI and addresses
+│   │   └── types/           # TypeScript definitions
+│   └── public/              # Static assets
+├── scripts/                   # Deployment scripts
+├── test/                     # Smart contract tests
+├── typechain-types/          # Generated TypeScript types
+└── docs/                     # Documentation
+```
+
+## 🛠️ Development Workflow
+
+### For Customers
+1. **Connect Wallet** - Connect MetaMask to the application
+2. **Browse Products** - Use filters to find products by category, vendor, or price
+3. **View Details** - Click on products to see full details and vendor information
+4. **Make Purchase** - Click "Buy Now" and confirm transaction in MetaMask
+5. **Track Orders** - View purchase history in connected wallet
+
+### For Vendors
+1. **Connect Wallet** - Connect MetaMask with a test account
+2. **Register as Vendor** - Complete vendor registration with store details
+3. **List Products** - Add products with images, descriptions, and pricing
+4. **Manage Inventory** - Update product details and stock levels
+5. **Withdraw Earnings** - Collect payments from sales (95% after platform fee)
+
+### For Developers
+1. **Start Development Environment** - `npm run dev`
+2. **Deploy Contracts** - `npm run deploy`
+3. **Run Tests** - `npm test`
+4. **Configure MetaMask** - Use provided test accounts
+5. **Develop Features** - Hot reload enabled for frontend development
 
 ## 🚀 Deployment
 
 ### Local Development
-1. Start Hardhat node: `npm run node`
-2. Deploy contract: `npm run deploy`
-3. Start frontend: `npm run frontend`
+```bash
+# Start Hardhat node
+npm run node
+
+# Deploy contract
+npm run deploy
+
+# Start frontend
+npm run frontend
+```
 
 ### Production Deployment
 For mainnet or testnet deployment:
@@ -295,15 +272,40 @@ For mainnet or testnet deployment:
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Ensure all tests pass
-6. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Development Guidelines
+- Use TypeScript for type safety
+- Implement proper error handling and security checks
+- Follow React best practices for component organization
+- Ensure smart contract security with proper validation
+- Maintain clean, readable code with appropriate comments
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+#### MetaMask Connection
+- **Wrong Network Error**: Ensure Chain ID is exactly `1337`
+- **Nonce Issues**: Reset account in MetaMask settings
+- **Connection Refused**: Verify Hardhat node is running on port 8545
+
+#### Contract Issues
+- **Contract Not Found**: Redeploy with `npm run deploy`
+- **Contract Not Available**: Check contract address in `frontend/src/contracts/contract-address.json`
+
+#### Development Environment
+- **Port Conflicts**: Frontend runs on port 3000, Hardhat on 8545
+- **Build Errors**: Run `npm run compile` to rebuild contracts
+
+📖 **Detailed troubleshooting**: [METAMASK_SETUP.md](./METAMASK_SETUP.md)
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🆘 Support
 
@@ -318,37 +320,18 @@ For development questions, please refer to:
 - [Ethers.js Documentation](https://docs.ethers.io/)
 - [React Documentation](https://reactjs.org/docs)
 
-## 🛍️ How to Use the Platform
+## 🎯 Roadmap
 
-### For Customers
-1. **Connect Wallet**: Click "Connect Wallet" to connect your MetaMask
-2. **Browse Products**: Use filters to find products by category, vendor, or price
-3. **View Details**: Click on any product to see full details and vendor information
-4. **Make Purchase**: Click "Buy Now" and confirm the transaction in MetaMask
-5. **Track Orders**: View your purchase history in your connected wallet
-
-### For Vendors
-1. **Register as Vendor**: 
-   - Connect your wallet
-   - Click "Register as Vendor" tab
-   - Fill in your store name and description
-   - Confirm the registration transaction
-
-2. **List Products**:
-   - Once registered, use the "Add Product" tab
-   - Upload product images, set prices, and manage inventory
-   - Products appear immediately after transaction confirmation
-
-3. **Manage Earnings**:
-   - View your vendor stats including total sales and product count
-   - Withdraw your earnings (95% of sale price after 5% platform fee)
-   - Update product details and stock levels
-
-### For Platform Administrator
-- **Manage Platform Fee**: Adjust the platform fee percentage (max 20%)
-- **Vendor Management**: Deactivate problematic vendors if needed
-- **Withdraw Platform Fees**: Collect accumulated platform fees
+- [ ] IPFS integration for image storage
+- [ ] Multi-chain support (Polygon, BSC)
+- [ ] Mobile responsive design improvements
+- [ ] Advanced search and filtering
+- [ ] Vendor analytics dashboard
+- [ ] Social features (reviews, favorites)
+- [ ] Payment integration (multiple cryptocurrencies)
 
 ---
 
-**Happy Coding! 🎉**
+**Built with ❤️ using Ethereum, React, and Hardhat**
+
+*Empowering decentralized commerce, one transaction at a time.*
