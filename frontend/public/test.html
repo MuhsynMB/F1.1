@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contract Test</title>
+</head>
+<body>
+    <h1>Testing Contract Connection</h1>
+    <div id="results"></div>
+    
+    <script>
+        async function testContract() {
+            const results = document.getElementById('results');
+            
+            try {
+                // Check if we can connect to the local network
+                const response = await fetch('http://localhost:8545', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        method: 'eth_chainId',
+                        params: [],
+                        id: 1,
+                        jsonrpc: '2.0'
+                    })
+                });
+                
+                const data = await response.json();
+                results.innerHTML += `<p>✅ Network accessible: Chain ID ${parseInt(data.result, 16)}</p>`;
+                
+                // Check contract address file
+                const contractResponse = await fetch('/src/contracts/contract-address.json');
+                const contractData = await contractResponse.json();
+                results.innerHTML += `<p>✅ Contract address: ${contractData.SokoChain}</p>`;
+                
+                results.innerHTML += `<p>🎉 Everything looks good! Try refreshing your main app.</p>`;
+                
+            } catch (error) {
+                results.innerHTML += `<p>❌ Error: ${error.message}</p>`;
+            }
+        }
+        
+        testContract();
+    </script>
+</body>
+</html>
