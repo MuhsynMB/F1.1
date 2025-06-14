@@ -79,17 +79,16 @@ const AppContent: React.FC = () => {
       }
 
       const provider = new ethers.BrowserProvider(window.ethereum);
-      setProvider(provider);
-
-      // Load contract
+      setProvider(provider);      // Load contract
       const contractAddress = await import('./contracts/contract-address.json');
       const contractABI = await import('./contracts/SokoChain.json');
       
       console.log('Contract address:', contractAddress.SokoChain);
       console.log('Contract ABI loaded successfully');
-        const sokoChain = new ethers.Contract(
+      
+      const sokoChain = new ethers.Contract(
         contractAddress.SokoChain,
-        contractABI,
+        contractABI.default || contractABI,
         provider
       );
       setSokoChain(sokoChain);
