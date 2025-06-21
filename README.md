@@ -38,7 +38,7 @@ Make sure you have the following software installed:
 Open your terminal and clone the repository:
 
 ```bash
-git clone https://github.com/MuhsynMB/soko-chain.git
+git clone https://github.com/MuhsynMB/F1.1.git
 cd soko-chain
 ```
 
