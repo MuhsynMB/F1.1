@@ -39,7 +39,7 @@ Open your terminal and clone the repository:
 
 ```bash
 git clone https://github.com/MuhsynMB/F1.1.git
-cd soko-chain
+cd F1.1
 ```
 
 ### 3. Install Dependencies
